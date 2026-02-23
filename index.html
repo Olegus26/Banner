@@ -1,0 +1,229 @@
+<div class="container container_wide">
+    <div class="birthday-banner">
+        <div class="birthday-content">
+            <!-- Левый текст -->
+            <div class="birthday-text left">
+                <span class="birthday-subtitle">Нам 30 років!</span>
+                <h2 class="birthday-title">Харків-Ріелтер</h2>
+                <p class="birthday-description">Три десятиліття допомагаємо харків'янам знаходити домівку. Дякуємо, що ви з нами! Весь місяць — спеціальні умови на підбір нерухомості та безкоштовні консультації.</p>
+            </div>
+
+            <!-- Карусель изображений (большая) -->
+            <div class="carousel-container">
+                <button class="carousel-btn prev" onclick="moveSlide(-1)">❮</button>
+                <div class="carousel-slide">
+                    <img src="Image 1.jpg" alt="Image 1" class="carousel-image active">
+                    <img src="Image 2.jpg" alt="Image 2" class="carousel-image">
+                    <img src="Image 3.jpg" alt="Image 3" class="carousel-image">
+                    <img src="Image 4.jpg" alt="Image 4" class="carousel-image">
+                    <img src="Image 5.jpg" alt="Image 5" class="carousel-image">
+                </div>
+                <button class="carousel-btn next" onclick="moveSlide(1)">❯</button>
+                <div class="carousel-dots"></div>
+            </div>
+
+            <!-- Правый текст -->
+            <div class="birthday-text right">
+                <span class="birthday-subtitle">З нами надійно</span>
+                <h2 class="birthday-title-small">30 років довіри</h2>
+                <p class="birthday-description">Понад 5000 родин знайшли життя своєї мрії з нашою допомогою. Приєднуйтесь і ви!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .birthday-banner {
+        background: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 100%);
+        border-radius: 16px;
+        padding: 40px 30px;
+        margin: 40px 0;
+        color: white;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        font-family: 'Roboto', sans-serif;
+    }
+    .birthday-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+    }
+    .birthday-text {
+        flex: 1;
+        min-width: 200px;
+    }
+    .birthday-text.left {
+        text-align: left;
+    }
+    .birthday-text.right {
+        text-align: right;
+    }
+    .birthday-subtitle {
+        font-size: 18px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        opacity: 0.9;
+        display: block;
+        margin-bottom: 10px;
+    }
+    .birthday-title {
+        font-size: 48px;
+        font-weight: 900;
+        line-height: 1.1;
+        margin: 0 0 15px 0;
+        color: #FFD700;
+        text-shadow: 2px 2px 0 rgba(0,0,0,0.1);
+    }
+    .birthday-title-small {
+        font-size: 32px;
+        font-weight: 700;
+        margin: 0 0 15px 0;
+        color: #FFD700;
+    }
+    .birthday-description {
+        font-size: 16px;
+        line-height: 1.6;
+        margin-bottom: 25px;
+        opacity: 0.95;
+    }
+
+    /* Карусель */
+    .carousel-container {
+        position: relative;
+        width: 500px;
+        height: 350px;
+        flex-shrink: 0;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    }
+    .carousel-slide {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+    .carousel-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+        pointer-events: none;
+    }
+    .carousel-image.active {
+        opacity: 1;
+        pointer-events: auto;
+    }
+    .carousel-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0,0,0,0.5);
+        color: white;
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        font-size: 20px;
+        cursor: pointer;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.3s;
+    }
+    .carousel-btn:hover {
+        background: rgba(0,0,0,0.8);
+    }
+    .prev {
+        left: 10px;
+    }
+    .next {
+        right: 10px;
+    }
+    .carousel-dots {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 8px;
+        z-index: 10;
+    }
+    .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.5);
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+    .dot.active {
+        background: #FFD700;
+    }
+
+    @media (max-width: 1024px) {
+        .birthday-content {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .birthday-text {
+            flex: none;
+            width: 100%;
+            text-align: center !important;
+        }
+        .carousel-container {
+            width: 100%;
+            max-width: 600px;
+            height: 400px;
+            margin: 20px 0;
+        }
+    }
+</style>
+
+<script>
+    let currentSlide = 0;
+    const images = document.querySelectorAll('.carousel-image');
+    const dotsContainer = document.querySelector('.carousel-dots');
+
+    function initDots() {
+        for (let i = 0; i < images.length; i++) {
+            const dot = document.createElement('span');
+            dot.classList.add('dot');
+            if (i === 0) dot.classList.add('active');
+            dot.onclick = () => goToSlide(i);
+            dotsContainer.appendChild(dot);
+        }
+    }
+
+    function updateSlide(index) {
+        images.forEach((img, i) => {
+            img.classList.toggle('active', i === index);
+        });
+        document.querySelectorAll('.dot').forEach((dot, i) => {
+            dot.classList.toggle('active', i === index);
+        });
+    }
+
+    function moveSlide(direction) {
+        currentSlide = (currentSlide + direction + images.length) % images.length;
+        updateSlide(currentSlide);
+    }
+
+    function goToSlide(index) {
+        currentSlide = index;
+        updateSlide(currentSlide);
+    }
+
+    // Автоматическая смена слайдов каждые 4 секунды
+    setInterval(() => {
+        moveSlide(1);
+    }, 4000);
+
+    // Инициализация при загрузке
+    document.addEventListener('DOMContentLoaded', initDots);
+</script>
