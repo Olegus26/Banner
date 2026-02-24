@@ -1,14 +1,14 @@
 <div class="container container_wide">
     <div class="birthday-banner">
         <div class="birthday-content">
-            <!-- Левый текст -->
+
             <div class="birthday-text left">
                 <span class="birthday-subtitle">Нам 30 років!</span>
                 <h2 class="birthday-title">Харків-Ріелтер</h2>
-                <p class="birthday-description">Три десятиліття допомагаємо харків'янам знаходити домівку. Дякуємо, що ви з нами! Весь місяць — спеціальні умови на підбір нерухомості та безкоштовні консультації.</p>
+                <p class="birthday-description">Три десятиліття допомагаємо харків’янам знаходити свій дім. Дякуємо, що ви з нами.</p>
+                <p class="birthday-description">Рухаємося далі — для вас і разом з вами.</p>
             </div>
 
-            <!-- Карусель изображений (большая) -->
             <div class="carousel-container">
                 <button class="carousel-btn prev" onclick="moveSlide(-1)">❮</button>
                 <div class="carousel-slide">
@@ -22,11 +22,10 @@
                 <div class="carousel-dots"></div>
             </div>
 
-            <!-- Правый текст -->
             <div class="birthday-text right">
                 <span class="birthday-subtitle">З нами надійно</span>
                 <h2 class="birthday-title-small">30 років довіри</h2>
-                <p class="birthday-description">Понад 5000 родин знайшли життя своєї мрії з нашою допомогою. Приєднуйтесь і ви!</p>
+                <p class="birthday-description">Десятки тисяч родин знайшли житло своєї мрії з нашою допомогою! Обирайте досвід, обирайте результат!</p>
             </div>
         </div>
     </div>
@@ -88,7 +87,7 @@
         opacity: 0.95;
     }
 
-    /* Карусель */
+
     .carousel-container {
         position: relative;
         width: 500px;
@@ -219,11 +218,11 @@
         updateSlide(currentSlide);
     }
 
-    // Автоматическая смена слайдов каждые 4 секунды
+
     setInterval(() => {
         moveSlide(1);
     }, 4000);
 
-    // Инициализация при загрузке
+
     document.addEventListener('DOMContentLoaded', initDots);
 </script>
