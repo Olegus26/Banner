@@ -32,14 +32,17 @@
 </div>
 
 <style>
+    /* Підключення шрифту Comfortaa */
+    @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+
     .birthday-banner {
+        font-family: 'Comfortaa', sans-serif;
         background: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 100%);
         border-radius: 16px;
         padding: 40px 30px;
         margin: 40px 0;
         color: white;
         box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        font-family: 'Roboto', sans-serif;
     }
     .birthday-content {
         display: flex;
@@ -58,7 +61,7 @@
         text-align: right;
     }
     .birthday-subtitle {
-        font-size: 18px;
+        font-size: 20px;        /* збільшено */
         font-weight: 500;
         text-transform: uppercase;
         letter-spacing: 2px;
@@ -67,7 +70,7 @@
         margin-bottom: 10px;
     }
     .birthday-title {
-        font-size: 48px;
+        font-size: 52px;         /* збільшено */
         font-weight: 900;
         line-height: 1.1;
         margin: 0 0 15px 0;
@@ -75,18 +78,17 @@
         text-shadow: 2px 2px 0 rgba(0,0,0,0.1);
     }
     .birthday-title-small {
-        font-size: 32px;
+        font-size: 36px;         /* збільшено */
         font-weight: 700;
         margin: 0 0 15px 0;
         color: #FFD700;
     }
     .birthday-description {
-        font-size: 16px;
+        font-size: 18px;         /* збільшено */
         line-height: 1.6;
         margin-bottom: 25px;
         opacity: 0.95;
     }
-
 
     .carousel-container {
         position: relative;
@@ -218,11 +220,9 @@
         updateSlide(currentSlide);
     }
 
-
     setInterval(() => {
         moveSlide(1);
     }, 4000);
-
 
     document.addEventListener('DOMContentLoaded', initDots);
 </script>
