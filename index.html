@@ -4,8 +4,8 @@
 
             <div class="birthday-text left">
                 <span class="birthday-subtitle">Нам 30 років!</span>
-                <h2 class="birthday-title">Харків-Ріелтер</h2>
-                <p class="birthday-description">Три десятиліття допомагаємо харків’янам знаходити свій дім. Дякуємо, що ви з нами.</p>
+                <h2 class="birthday-title gold-text">Харків-Ріелтер</h2>
+                <p class="birthday-description">Три десятиліття допомагаємо харків'янам знаходити свій дім. Дякуємо, що ви з нами.</p>
                 <p class="birthday-description">Рухаємося далі — для вас і разом з вами.</p>
             </div>
 
@@ -24,7 +24,7 @@
 
             <div class="birthday-text right">
                 <span class="birthday-subtitle">З нами надійно</span>
-                <h2 class="birthday-title-small">30 років довіри</h2>
+                <h2 class="birthday-title-small gold-text">30 років довіри</h2>
                 <p class="birthday-description">Десятки тисяч родин знайшли житло своєї мрії з нашою допомогою! Обирайте досвід, обирайте результат!</p>
             </div>
         </div>
@@ -61,33 +61,42 @@
         text-align: right;
     }
     .birthday-subtitle {
-        font-size: 20px;        /* збільшено */
+        font-size: 20px;
         font-weight: 500;
         text-transform: uppercase;
         letter-spacing: 2px;
         opacity: 0.9;
         display: block;
         margin-bottom: 10px;
+        /* Залишається Comfortaa */
     }
-    .birthday-title {
-        font-size: 52px;         /* збільшено */
-        font-weight: 900;
-        line-height: 1.1;
-        margin: 0 0 15px 0;
+    
+    /* Стилі для жовтих заголовків - Arial */
+    .gold-text {
+        font-family: 'Arial', sans-serif; /* Arial замість Times New Roman */
         color: #FFD700;
         text-shadow: 2px 2px 0 rgba(0,0,0,0.1);
     }
+    
+    .birthday-title {
+        font-size: 52px;
+        font-weight: 900;
+        line-height: 1.1;
+        margin: 0 0 15px 0;
+    }
+    
     .birthday-title-small {
-        font-size: 36px;         /* збільшено */
+        font-size: 36px;
         font-weight: 700;
         margin: 0 0 15px 0;
-        color: #FFD700;
     }
+    
     .birthday-description {
-        font-size: 18px;         /* збільшено */
+        font-size: 18px;
         line-height: 1.6;
         margin-bottom: 25px;
         opacity: 0.95;
+        /* Залишається Comfortaa */
     }
 
     .carousel-container {
